@@ -18,7 +18,11 @@ jQuery(document).ready(($) => {
     const targetForm = $(this).attr('id') === 'staffToggle' ? '#staffForm' : '#badgeForm';
     const otherForm = $(this).attr('id') === 'staffToggle' ? '#badgeForm' : '#staffForm';
 
-    $(targetForm).collapse('toggle');
-    $(otherForm).collapse('hide');
+    if ($(targetForm).hasClass('show')) {
+      $(targetForm).collapse('hide');
+    } else {
+      $(targetForm).collapse('show');
+      $(otherForm).collapse('hide');
+    }
   });
 });

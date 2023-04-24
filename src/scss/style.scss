@@ -33,10 +33,10 @@ footer.site-footer {
 .knight-cash-menu-button {
   border-radius: 10px;
 
-  a:before {
+  a::before {
     content: url(https://ucfcardredesignbscmsdev.smca.ucf.edu/wp-content/uploads/sites/40/2023/04/log-in-cash-icon.png);
     display: inline-block;
-    width: 10px;
+    width: 12px;
     height: 16px;
     margin-right: 10px;
   }

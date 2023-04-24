@@ -45,7 +45,7 @@ function my_custom_menu_link_attributes($atts, $item, $args, $depth) {
 
 	if ('header-menu' === $args->theme_location && in_array($item->title, $special_items)) {
 		$existing_classes = isset($atts['class']) ? $atts['class'] : '';
-		$atts['class'] = $existing_classes . ' text-primary'; // Add 'text-inverse' class
+		$atts['class'] = $existing_classes . ' text-inverse'; // Add 'text-inverse' class
 	}
 
 	return $atts;

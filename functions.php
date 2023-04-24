@@ -22,7 +22,7 @@ function my_custom_menu_item_classes($classes, $item, $args, $depth) {
 
 	//Add custom class to pecial nav items
 	if ('header-menu' === $args->theme_location && in_array($item->title, $special_items)) {
-		$classes[] = ' knight-cash-menu-button bg-primary'; // Add custom class
+		$classes[] = ' knight-cash-menu-button bg-primary-t-2'; // Add custom class
 	}
 
 	return $classes;

@@ -22,7 +22,7 @@
 			<?php if( $staff_image ): ?>
 				<div class="mb-4 col-md-6 col-lg-4">
 
-					<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-inverse hover-text-primary text-decoration-none" id="staffToggle" href="#staffForm" data-toggle="collapse" aria-expanded="false" aria-controls="#staffForm, #badgeForm">
+					<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-inverse hover-text-primary  text-decoration-none" id="staffToggle" href="#staffForm" data-toggle="collapse" aria-expanded="false" aria-controls="#staffForm, #badgeForm">
 
 						<img src="<?php echo esc_url( $staff_image['url'] ); ?>" alt="<?php echo esc_attr( $staff_image['alt'] ); ?>" class=" media-background object-fit-contain hover-child" data-object-fit="contain">
 
@@ -30,7 +30,7 @@
 
 						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 py-2 mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
 
-						<span class="fa fa-2x fa-chevron-down hover-child text-inverse hover-text-primary mt-5 mb-3" aria-hidden="true"></span>
+						<span class="fa fa-2x fa-chevron-down hover-child mt-5 mb-3" aria-hidden="true"></span>
 
 					</a>
 
@@ -48,7 +48,7 @@
 
 						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 py-2 mt-5 mb-3"><?php echo $badge_overlay; ?></h3>
 
-						<span class="fa fa-2x fa-chevron-down hover-child text-inverse hover-text-primary mt-5 mb-3" aria-hidden="true"></span>
+						<span class="fa fa-2x fa-chevron-down hover-child mt-5 mb-3" aria-hidden="true"></span>
 
 					</a>
 

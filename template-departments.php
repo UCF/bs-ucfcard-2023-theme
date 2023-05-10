@@ -28,7 +28,7 @@
 
 						<div class="media-background object-fit-cover bg-inverse-t-3 hover-child hover-child-hide fade" data-object-fit="cover"></div>
 
-						<h3 class="h5 text-uppercase text-center hover-child mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
+						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-secondary-t-3 mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
 
 						<span class="fa fa-2x fa-chevron-down hover-child hover-child-hide fade mt-5 mb-3" aria-hidden="true"></span>
 

@@ -30,7 +30,7 @@
 
 						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
 
-						<span class="fa fa-2x fa-chevron-down hover-child hover-child-hide fade mt-5 mb-3" aria-hidden="true"></span>
+						<span class="fa fa-2x fa-chevron-down hover-child text-inverse hover-text-primary mt-5 mb-3" aria-hidden="true"></span>
 
 					</a>
 
@@ -48,7 +48,7 @@
 
 						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 mt-5 mb-3"><?php echo $badge_overlay; ?></h3>
 
-						<span class="fa fa-2x fa-chevron-down hover-child hover-child-hide fade mt-5 mb-3" aria-hidden="true"></span>
+						<span class="fa fa-2x fa-chevron-down hover-child text-inverse hover-text-primary mt-5 mb-3" aria-hidden="true"></span>
 
 					</a>
 

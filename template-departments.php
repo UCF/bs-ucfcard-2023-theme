@@ -28,7 +28,7 @@
 
 						<div class="media-background object-fit-cover bg-inverse-t-3 hover-child hover-child-hide fade" data-object-fit="cover"></div>
 
-						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
+						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 py-2 mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
 
 						<span class="fa fa-2x fa-chevron-down hover-child text-inverse hover-text-primary mt-5 mb-3" aria-hidden="true"></span>
 
@@ -46,7 +46,7 @@
 
 						<div class="media-background object-fit-cover bg-inverse-t-3 hover-child hover-child-hide fade" data-object-fit="cover"></div>
 
-						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 mt-5 mb-3"><?php echo $badge_overlay; ?></h3>
+						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 py-2 mt-5 mb-3"><?php echo $badge_overlay; ?></h3>
 
 						<span class="fa fa-2x fa-chevron-down hover-child text-inverse hover-text-primary mt-5 mb-3" aria-hidden="true"></span>
 

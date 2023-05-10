@@ -23,7 +23,9 @@
 // Add/import your theme's custom styles here
 // ...
 .hover-text-primary {
-  color: #000 !important;
+  :hover {
+    color: #000 !important;
+  }
 }
 
 footer.site-footer {

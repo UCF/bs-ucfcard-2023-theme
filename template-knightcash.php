@@ -125,7 +125,123 @@ $left_subtitle = get_field('left_subtitle');
 
 
 <!-- Map JavaScript -->
+<script type="text/javascript">
+	var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';
+</script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6IftJIbhuHExsKKkPqARDNmkp3kZKhS4&amp;sensor=false"></script>
+<script type="text/javascript">
+
+	jQuery(document).ready( function($) {
+
+		/* Category Fade BG Image Effect */
+		$('.filter-container .cta-btn').on( 'hover', function() {
+
+			$category_bg = $(this).data( 'category-bg' );
+
+			$('#side-by-side-map .left-side').css( { 'background' : 'url(' + $category_bg + ')', 'background-size' : 'cover', 'background-position' : 'center' } );
+
+		} );
+
+		$('.faq-link').on( 'click', function(evt) {
+			evt.preventDefault();
+
+			if ( $(this).hasClass( 'active' ) ) {
+				$(this).parent().find( '.faq-info' ).slideUp( 300 );
+				$(this).removeClass( 'active' );
+			} else {
+				$('.faq-link.active').removeClass( 'active' ).parent().find( '.faq-info' ).slideUp( 300 );
+				$(this).addClass( 'active' );
+				$(this).parent().find( '.faq-info' ).slideDown( 300 );
+			}
+
+		} );
+
+		$('.filter-container .cta-btn').on( 'click', function(evt) {
+			evt.preventDefault();
+
+			$category = $(this).data( 'category' );
+			$cat_number = $(this).data( 'category-num' );
+			$current_window_width = $(window).width();
+
+			$('#cat-link-container').hide();
+			$('.category-popup').fadeIn( 500 );
+			$('.category-container[data-category="' + $category + '"]').show();
+
+			if ( $current_window_width < 960 ) {
+				$('#side-by-side-map .left-side').css( { padding : 0 } );
+			}
+
+
+		} );
+
+		$('.map-back').on( 'click', function(evt) {
+			evt.preventDefault();
+
+			$current_window_width = $(window).width();
+
+			$('#cat-link-container').show();
+			$('.category-popup').hide();
+			$('.category-container').hide();
+
+			if ( $current_window_width < 960 ) {
+				$('#side-by-side-map .left-side').css( { padding : '50px 0' } );
+			}
+
+		} );
+
+		$(document).bind('gform_post_render', function() {
+			$("#newsletter-form .gform_heading").detach().prependTo('.gform_footer').wrap('<div class="disclaimer-msg"></div>');
+		});
+
+		$("#newsletter-form .gform_heading").detach().prependTo('.gform_footer').wrap('<div class="disclaimer-msg"></div>');
+
+		$(document).bind('gform_confirmation_loaded', function(event, formId){
+			$('.newsletter-heading').remove();
+			//$('#newsletter-success').fadeIn( 500 );
+		});
+
+		$('.location-link').on( 'click', function(evt) {
+			$current_window_width = $(window).width();
+
+			evt.preventDefault();
+
+			if ( $current_window_width < 960 ) {
+
+				/* Get Location Number */
+				$location_num = $(this).data( 'location-num' );
+
+				if ( !$(this).hasClass( 'active' ) ) {
+
+					/* Close Other Location */
+					$('.location-link.active').removeClass( 'active' );
+					$('.info-container.active').slideUp( 300, function() {
+						$(this).removeClass( 'active' );
+					});
+
+					/* Open Location */
+					$('.info-container[data-location-num="' + $location_num + '"]').slideDown( 300, function() {
+						$(this).addClass( 'active' );
+					} );
+
+					$(this).addClass( 'active' );
+
+				} else {
+
+					$(this).removeClass( 'active' );
+					$('.info-container.active').slideUp( 300, function() {
+						$(this).removeClass( 'active' );
+					});
+
+				}
+
+			}
+
+		} );
+
+	});
+
+</script>
+
 <script type="text/javascript">
 
 	function initializeGoogleMap() {

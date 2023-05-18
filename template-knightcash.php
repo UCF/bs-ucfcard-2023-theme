@@ -162,22 +162,22 @@ $left_subtitle = $left_side['left_subtitle'];
 
 		//Markers
 		var markerIcon = new google.maps.MarkerImage(
-			templatedir + '/library/images/map-pin.png',
+			templatedir + '/src/images/map-pin.png',
 			new google.maps.Size(87, 103)
 		);
 
 		var cashMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/library/images/map-cash-pin.png',
+			templatedir + '/src/images/map-cash-pin.png',
 			new google.maps.Size(34, 48)
 		);
 
 		var foodMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/library/images/map-food-pin.png',
+			templatedir + '/src/images/map-food-pin.png',
 			new google.maps.Size(33, 47)
 		);
 
 		var storeMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/library/images/map-store-pin.png',
+			templatedir + '/src/images/map-store-pin.png',
 			new google.maps.Size(34, 48)
 		);
 

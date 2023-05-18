@@ -8,10 +8,10 @@
 
 <?php
 //Fetch Knight Cash ACF Fields
-$left_side = get_field('left_side');
-$map_background = $left_side['map_section_background'];
-$left_title = $left_side['left_title'];
-$left_subtitle = $left_side['left_subtitle'];
+$map_background = get_field('left_side_background');
+$left_title = get_field('left_title');
+$left_subtitle = get_field('left_subtitle');
+
 ?>
 
 <div class="container-fluid bg-inverse-t-2">

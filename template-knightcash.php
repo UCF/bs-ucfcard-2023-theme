@@ -111,6 +111,7 @@ $left_subtitle = get_field('left_subtitle');
 
 
 <!-- Map JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript"> var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
 <script type="text/javascript" src="/static/js/infobubble.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6IftJIbhuHExsKKkPqARDNmkp3kZKhS4&amp;sensor=false"></script>

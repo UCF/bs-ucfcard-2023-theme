@@ -123,7 +123,9 @@ $left_subtitle = $left_side['left_subtitle'];
 	</div>
 </div>
 
+
 <!-- Map JavaScript -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6IftJIbhuHExsKKkPqARDNmkp3kZKhS4&amp;sensor=false"></script>
 <script type="text/javascript">
 
 	function initializeGoogleMap() {

@@ -65,18 +65,12 @@ $left_subtitle = get_field('left_subtitle');
 										}
 										?>
 									</ul>
-
 									<div class="clear"></div>
-
 									<a href="#" class="map-back">Back</a>
-
 								</div>
 							<?php }
-
 							?>
-
 							<div class="clear"></div>
-
 						</div>
 
 					</div>
@@ -90,28 +84,20 @@ $left_subtitle = get_field('left_subtitle');
 						<div class="map-filters">
 
 							<h3>Select a Category</h3>
-
 							<div class="divider"></div>
-
 							<div class="filter-container">
-
 								<?php
 								$cat_counter = 1;
-
 								foreach ( $map_categories as $map_category ) { ?>
 									<div style="position: absolute; opacity: 0; left: -5000px">
 										<img src="<?php echo $map_category['background_image']; ?>" />
 									</div>
 									<a href="#" data-category-bg="<?php echo $map_category['background_image']; ?>" data-category-num="<?php echo $cat_counter; ?>" data-category="<?php echo str_replace( '--', '-', str_replace( '&', '', str_replace( ' ', '-', strtolower( $map_category['name'] ) ) ) ); ?>" class="cta-btn yellow"><?php echo $map_category['name']; ?></a>
 									<?php $cat_counter++; /* Increase Category Counter */ }
-
 								?>
 							</div>
-
 						</div>
-
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -125,9 +111,8 @@ $left_subtitle = get_field('left_subtitle');
 
 
 <!-- Map JavaScript -->
-<script type="text/javascript">
-	var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';
-</script>
+<script type="text/javascript"> var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
+<script type="text/javascript" src="/static/js/infobubble.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6IftJIbhuHExsKKkPqARDNmkp3kZKhS4&amp;sensor=false"></script>
 <script type="text/javascript">
 

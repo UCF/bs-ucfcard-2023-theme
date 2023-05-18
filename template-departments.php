@@ -55,7 +55,7 @@
 				</div>
 			<?php endif; ?>
 		</div>
-		<div class="row mt-4">
+		<div class="row mt-4" id="formContainer">
 			<div class="col-md-12">
 				<div class="collapse" id="staffForm">
 					<form>

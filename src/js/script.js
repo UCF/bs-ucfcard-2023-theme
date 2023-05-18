@@ -26,11 +26,8 @@ jQuery(document).ready(($) => {
       $(targetForm).collapse('show');
       $(otherForm).collapse('hide');
     }
-  });
-
-  $('#staffForm, #badgeForm').on('shown.bs.collapse', function () {
     $('html, body').animate({
-      scrollTop: $(this).offset().top
+      scrollTop: $('#formContainer').offset().top
     }, 500);
   });
 });

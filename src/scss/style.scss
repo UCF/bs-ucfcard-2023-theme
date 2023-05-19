@@ -111,3 +111,34 @@ footer.site-footer {
     }
   }
 }
+
+.map-filters {
+  position: relative;
+  z-index: 2;
+  color: #FFF;
+  display: inline-block;
+
+  h3 {
+    font-size: 36px;
+    text-transform: none;
+  }
+
+  .cta-btn {
+    margin: 15px 10px;
+  }
+
+  .divider {
+    position: relative;
+    height: 2px;
+    width: 50px;
+    margin: 25px auto 33px;
+    background: #FFF;
+    opacity: 0.40;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  }
+
+  .filter-container {
+    max-width: 435px;
+  }
+
+}

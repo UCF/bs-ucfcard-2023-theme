@@ -70,7 +70,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 										?>
 									</ul>
 									<div class="clear"></div>
-									<a href="#" class="map-back">Back</a>
+									<a href="#" class="map-back font-condensed h6">Back</a>
 								</div>
 							<?php }
 							?>

@@ -42,8 +42,11 @@ $google_maps_api_key = get_field('google_maps_api_key');
 							$location_counter = 1;
 							foreach ( $map_categories as $map_category ) { ?>
 								<div class="category-container" style="display: none;" data-category="<?php echo str_replace( '--', '-', str_replace( '&', '', str_replace( ' ', '-', strtolower( $map_category['name'] ) ) ) ); ?>">
-									<div class="category-title"><?php echo $map_category['name']; ?></div>
+
+									<div class="category-title h4 font-condensed"><?php echo $map_category['name']; ?></div>
+
 									<div class="divider"></div>
+
 									<ul>
 										<?php
 										$map_locations = $map_category['locations'];
@@ -53,11 +56,11 @@ $google_maps_api_key = get_field('google_maps_api_key');
 										if ( $map_locations ) {
 											foreach ( $map_locations as $location ) {
 												if ( $m_c % 2 == 0 ) { ?>
-													<li class="second">
+													<li class="second list-unstyled text-inverse">
 												<?php } else { ?>
-													<li class="list-unstyled">
+													<li class="list-unstyled text-inverse">
 												<?php } ?>
-												<a href="#" class="location-link" data-location-num="<?php echo $location_counter; ?>"><?php echo $location['name']; ?></a>
+												<a href="#" class="location-link text-inverse" data-location-num="<?php echo $location_counter; ?>"><?php echo $location['name']; ?></a>
 												<div class="info-container" data-location-num="<?php echo $location_counter; ?>">
 													<div class="category-description"><?php echo $location["description"]; ?></div>
 												</div>

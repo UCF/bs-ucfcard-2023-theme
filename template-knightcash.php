@@ -41,7 +41,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 							$map_categories = get_field( 'map_categories' );
 							$location_counter = 1;
 							foreach ( $map_categories as $map_category ) { ?>
-								<div class="category-container" style="display: none;" data-category="<?php echo str_replace( '--', '-', str_replace( '&', '', str_replace( ' ', '-', strtolower( $map_category['name'] ) ) ) ); ?>">
+								<div class="category-container pt-5" style="display: none;" data-category="<?php echo str_replace( '--', '-', str_replace( '&', '', str_replace( ' ', '-', strtolower( $map_category['name'] ) ) ) ); ?>">
 
 									<div class="category-title h4 font-condensed"><?php echo $map_category['name']; ?></div>
 

@@ -47,7 +47,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 
 									<div class="divider"></div>
 
-									<ul>
+									<ul class="list-group">
 										<?php
 										$map_locations = $map_category['locations'];
 										$m_c = 1;
@@ -56,9 +56,9 @@ $google_maps_api_key = get_field('google_maps_api_key');
 										if ( $map_locations ) {
 											foreach ( $map_locations as $location ) {
 												if ( $m_c % 2 == 0 ) { ?>
-													<li class="second list-unstyled text-inverse">
+													<li class="second list-unstyled text-inverse list-group-item">
 												<?php } else { ?>
-													<li class="list-unstyled text-inverse">
+													<li class="list-unstyled text-inverse list-group-item">
 												<?php } ?>
 												<a href="#" class="location-link text-inverse" data-location-num="<?php echo $location_counter; ?>"><?php echo $location['name']; ?></a>
 												<div class="info-container" data-location-num="<?php echo $location_counter; ?>">

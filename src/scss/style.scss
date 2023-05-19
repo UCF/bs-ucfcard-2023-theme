@@ -28,10 +28,11 @@
   }
 }
 
-footer.site-footer {
-  background-color: rgba(0,0,0,.85)!important;
+footer {
+  .site-footer {
+    background-color: rgba(0, 0, 0, .85) !important;
+  }
 }
-
 .knight-cash-menu-button {
   border-radius: 10px;
 
@@ -63,6 +64,7 @@ footer.site-footer {
 
 #map-row {
   height: 800px;
+  overflow: hidden;
 }
 
 #map {
@@ -103,80 +105,79 @@ footer.site-footer {
 }
 
 
-    .home-pin, .garage-pin {
-      padding: 10px;
-      width: 100%;
-      height: auto;
-      max-width: 224px;
-      // -webkit-box-shadow: 3px 3px 10px 0px rgba(119,119,119,0.41);
-      // -moz-box-shadow: 3px 3px 10px 0px rgba(119,119,119,0.41);
-      // box-shadow: 3px 3px 10px 0px rgba(119,119,119,0.41);
+.home-pin, .garage-pin {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  max-width: 224px;
+  // -webkit-box-shadow: 3px 3px 10px 0px rgba(119,119,119,0.41);
+  // -moz-box-shadow: 3px 3px 10px 0px rgba(119,119,119,0.41);
+  // box-shadow: 3px 3px 10px 0px rgba(119,119,119,0.41);
 
-      &.home {
-        height: 222px;
-      }
+  &.home {
+    height: 222px;
+  }
 
-      .inner {
-        background: white;
+  .inner {
+    background: white;
 
-        .top {
-          background: #fdc200;
-          padding: 24px 12px;
+    .top {
+      background: #fdc200;
+      padding: 24px 12px;
 
-        }
-
-        .address {
-          margin-top: 5px;
-          margin-bottom: 10px;
-
-        }
-        .phone {
-
-        }
-      }
-
-      &.metered {
-        padding: 0;
-        .inner {
-          h2 {
-            font-size: 18px;
-            letter-spacing: 0.5px;
-            text-align: center;
-            line-height: 50px;
-            margin-bottom: 0;
-          }
-        }
-      }
     }
 
-    .map-filters {
-      position: relative;
-      z-index: 2;
-      color: #FFF;
-      display: inline-block;
+    .address {
+      margin-top: 5px;
+      margin-bottom: 10px;
 
-      h3 {
-        font-size: 36px;
-        text-transform: none;
-      }
-
-      .cta-btn {
-        margin: 15px 10px;
-      }
-
-      .divider {
-        position: relative;
-        height: 2px;
-        width: 50px;
-        margin: 25px auto 33px;
-        background: #FFF;
-        opacity: 0.40;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-      }
-
-      .filter-container {
-        max-width: 435px;
-      }
+    }
+    .phone {
 
     }
   }
+
+  &.metered {
+    padding: 0;
+    .inner {
+      h2 {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.map-filters {
+  position: relative;
+  z-index: 2;
+  color: #FFF;
+  display: inline-block;
+
+  h3 {
+    font-size: 36px;
+    text-transform: none;
+  }
+
+  .cta-btn {
+    margin: 15px 10px;
+  }
+
+  .divider {
+    position: relative;
+    height: 2px;
+    width: 50px;
+    margin: 25px auto 33px;
+    background: #FFF;
+    opacity: 0.40;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  }
+
+  .filter-container {
+    max-width: 435px;
+  }
+
+}

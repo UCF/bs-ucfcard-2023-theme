@@ -84,32 +84,30 @@ footer {
   }
 }
 
-#side-by-side-map {
+.category-popup {
 
-  .category-popup {
+  .divider {
+    position: relative;
+    height: 2px;
+    width: 50px;
+    margin: 17px 0 20px;
+    background: #FFF;
+    opacity: .4;
+  }
 
-    .divider {
-      position: relative;
-      height: 2px;
-      width: 50px;
-      margin: 17px 0 20px;
-      background: #FFF;
-      opacity: .4;
-    }
-
-    .map-back:before {
-      content: '';
-      display: block;
-      position: absolute;
-      background: url(/images/back-btn.png) no-repeat;
-      width: 24px;
-      height: 14px;
-      left: 0;
-      top: 50%;
-      margin-top: -7px;
-    }
+  .map-back:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url(/images/back-btn.png) no-repeat;
+    width: 24px;
+    height: 14px;
+    left: 0;
+    top: 50%;
+    margin-top: -7px;
   }
 }
+
 
 
 .home-pin, .garage-pin {

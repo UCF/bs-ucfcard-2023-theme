@@ -116,6 +116,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 <script type="text/javascript"> var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
 <script type="text/javascript" src="/static/js/infobubble.js"></script>
 <script type="text/javascript" src="<?php echo $google_maps_api_key ?>"></script>
+
 <script type="text/javascript">
 
 	jQuery(document).ready( function($) {
@@ -265,22 +266,22 @@ $google_maps_api_key = get_field('google_maps_api_key');
 
 		//Markers
 		var markerIcon = new google.maps.MarkerImage(
-			templatedir + '/src/images/map-pin.png',
+			templatedir + '/images/map-pin.png',
 			new google.maps.Size(87, 103)
 		);
 
 		var cashMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/src/images/map-cash-pin.png',
+			templatedir + '/images/map-cash-pin.png',
 			new google.maps.Size(34, 48)
 		);
 
 		var foodMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/src/images/map-food-pin.png',
+			templatedir + '/images/map-food-pin.png',
 			new google.maps.Size(33, 47)
 		);
 
 		var storeMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/src/images/map-store-pin.png',
+			templatedir + '/images/map-store-pin.png',
 			new google.maps.Size(34, 48)
 		);
 

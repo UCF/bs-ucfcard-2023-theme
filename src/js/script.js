@@ -1,7 +1,6 @@
 //
 // Import third-party assets
 //
-
 // ...
 
 
@@ -11,6 +10,13 @@
 
 // Require your theme's custom script files here
 // ...
+
+/**
+ * Button toggles for Departments page
+ *
+ * @since 0.1.3
+ * @author Mike Setzer
+ **/
 jQuery(document).ready(($) => {
   $('#staffToggle, #badgeToggle').on('click', function (event) {
     event.preventDefault(); // Prevent default behavior of the anchor tag
@@ -26,7 +32,7 @@ jQuery(document).ready(($) => {
       $(targetForm).collapse('show');
       $(otherForm).collapse('hide');
     }
-    $('html, body').animate({
+    $('html, body').anima1te({
       scrollTop: $('#formContainer').offset().top
     }, 500);
   });

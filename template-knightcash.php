@@ -47,7 +47,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 
 									<div class="divider"></div>
 
-									<ul class="list-group">
+									<ul class="list-group mb-2">
 										<?php
 										$map_locations = $map_category['locations'];
 										$m_c = 1;

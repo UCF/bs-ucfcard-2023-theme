@@ -16,7 +16,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 ?>
 
 <div class="container-fluid bg-inverse-t-2">
-	<div class="row">
+	<div id="map-row" class="row">
 
 		<!-- Map Section Left -->
 		<div class="col col-12 col-md-6 px-0 d-flex flex-column text-center justify-content-center align-content-center text-inverse">

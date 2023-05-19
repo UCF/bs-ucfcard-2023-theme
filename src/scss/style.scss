@@ -85,7 +85,9 @@ footer {
 }
 
 #side-by-side-map {
+
   .category-popup {
+
     .divider {
       position: relative;
       height: 2px;
@@ -94,11 +96,12 @@ footer {
       background: #FFF;
       opacity: .4;
     }
+
     .map-back:before {
       content: '';
       display: block;
       position: absolute;
-      background: url(../images/back-btn.png) no-repeat;
+      background: url(/images/back-btn.png) no-repeat;
       width: 24px;
       height: 14px;
       left: 0;

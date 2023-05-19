@@ -96,17 +96,20 @@ footer {
   }
 
   .map-back {
+    position: relative;
+    display: inline-block;
+    padding-left: 36px;
 
     ::before {
-    content: '';
-    display: block;
-    position: absolute;
-    background: url(/images/back-btn.png) no-repeat;
-    width: 24px;
-    height: 14px;
-    left: 0;
-    top: 50%;
-    margin-top: -7px;
+      content: '';
+      display: block;
+      position: absolute;
+      background: url(/images/back-btn.png) no-repeat;
+      width: 24px;
+      height: 14px;
+      left: 0;
+      top: 50%;
+      margin-top: -7px;
     }
   }
 }

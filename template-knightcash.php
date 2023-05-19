@@ -55,7 +55,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 												if ( $m_c % 2 == 0 ) { ?>
 													<li class="second">
 												<?php } else { ?>
-													<li>
+													<li class="list-unstyled">
 												<?php } ?>
 												<a href="#" class="location-link" data-location-num="<?php echo $location_counter; ?>"><?php echo $location['name']; ?></a>
 												<div class="info-container" data-location-num="<?php echo $location_counter; ?>">

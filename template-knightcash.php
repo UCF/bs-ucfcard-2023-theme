@@ -26,7 +26,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 				</div>
 				<div class="align-self-center justify-content-center">
 					<?php if ($left_title) {?>
-						<h2 class="font-condensed d-block mb-5"><?php echo $left_title ?></h2>
+						<h2 class="font-condensed d-block mb-3"><?php echo $left_title ?></h2>
 					<?php }?>
 					<?php if ($left_subtitle) {?>
 						<p class="w-md-75 m-auto"><strong><?php echo $left_subtitle ?></strong></p>

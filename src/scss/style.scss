@@ -95,7 +95,9 @@ footer {
     opacity: .4;
   }
 
-  .map-back:before {
+  .map-back {
+
+    ::before {
     content: '';
     display: block;
     position: absolute;
@@ -105,6 +107,7 @@ footer {
     left: 0;
     top: 50%;
     margin-top: -7px;
+    }
   }
 }
 

@@ -11,6 +11,7 @@
 $map_background = get_field('left_side_background');
 $left_title = get_field('left_title');
 $left_subtitle = get_field('left_subtitle');
+$google_maps_api_key = get_field('google_maps_api_key');
 
 ?>
 
@@ -21,7 +22,7 @@ $left_subtitle = get_field('left_subtitle');
 		<div class="col col-12 col-md-6 px-0 d-flex flex-column text-center justify-content-center align-content-center text-inverse">
 			<div class="media-background-container d-flex flex-column py-5 px-4 h-100 justify-content-center">
 				<div class="media-background">
-					<img src="<?php echo esc_url( $map_background['url'] ); ?>" alt="<?php echo esc_attr( $map_background['alt'] ); ?>" class=" media-background object-fit-contain hover-child" data-object-fit="contain">
+					<img src="<?php echo esc_url( $map_background['url'] ); ?>" alt="<?php echo esc_attr( $map_background['alt'] ); ?>" class=" media-background object-fit-cover hover-child" data-object-fit="cover">
 				</div>
 				<div class="align-self-center justify-content-center">
 					<?php if ($left_title) {?>
@@ -114,7 +115,7 @@ $left_subtitle = get_field('left_subtitle');
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript"> var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
 <script type="text/javascript" src="/static/js/infobubble.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6IftJIbhuHExsKKkPqARDNmkp3kZKhS4&amp;sensor=false"></script>
+<script type="text/javascript" src="<?php echo $google_maps_api_key ?>"></script>
 <script type="text/javascript">
 
 	jQuery(document).ready( function($) {

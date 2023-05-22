@@ -399,10 +399,6 @@ $google_maps_api_key = get_field('google_maps_api_key');
 		the_html += '<div class="body" style="padding: 0;">';
 		the_html += "<div class='location-name'><?php echo $location['name']; ?></div>";
 		the_html += "<div class='location-category'><?php echo $map_category['name']; ?></div>";
-		<?php if ( $location["description"] ) { ?>
-		the_html += '<div class="info-wrap" style="padding-bottom: 10px;">';
-		the_html += '<?php echo str_replace ( array( "\r\n", "\r", "\n" ), "", $location["description"] ); ?>';
-		the_html += '</div>';
 		<?php } ?>
 		the_html += '</div>';
 		the_html += '</div>';

@@ -61,9 +61,6 @@ $google_maps_api_key = get_field('google_maps_api_key');
 													<li class="list-unstyled text-inverse list-group-item">
 												<?php } ?>
 												<a href="#" class="location-link text-inverse" data-location-num="<?php echo $location_counter; ?>"><?php echo $location['name']; ?></a>
-												<div class="info-container" data-location-num="<?php echo $location_counter; ?>">
-													<div class="category-description"><?php echo $location["description"]; ?></div>
-												</div>
 												</li>
 												<?php $location_counter++; $m_c++; }
 										}

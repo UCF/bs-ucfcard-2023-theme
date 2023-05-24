@@ -253,174 +253,173 @@ $google_maps_api_key = get_field('google_maps_api_key');
 			mapTypeId: SPRY_MAP_STYLE,
 			zoomControlOptions: {
 				style: google.maps.ZoomControlStyle.LARGE,
-				position: google.maps.ControlPosition.LEFT_CENTER
-			},
-		};
+				position: google.maps.ControlPosition.LEFT_CENTER,
+			};
 
-		//Activate Map
-		var map = new google.maps.Map(document.getElementById('alt-map'), mapOptions);
+			//Activate Map
+			var map = new google.maps.Map(document.getElementById('alt-map'), mapOptions);
 
-		//Activate map style
-		var mapType = new google.maps.StyledMapType(mapstyle, {name:"Spry"});
-		map.mapTypes.set(SPRY_MAP_STYLE, mapType);
+			//Activate map style
+			var mapType = new google.maps.StyledMapType(mapstyle, {name:"Spry"});
+			map.mapTypes.set(SPRY_MAP_STYLE, mapType);
 
-		//Markers
-		var markerIcon = new google.maps.MarkerImage(
-			templatedir + '/images/map-pin.png',
-			new google.maps.Size(87, 103)
-		);
+			//Markers
+			var markerIcon = new google.maps.MarkerImage(
+				templatedir + '/images/map-pin.png',
+				new google.maps.Size(87, 103)
+			);
 
-		var cashMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/images/map-cash-pin.png',
-			new google.maps.Size(34, 48)
-		);
+			var cashMarkerIcon = new google.maps.MarkerImage(
+				templatedir + '/images/map-cash-pin.png',
+				new google.maps.Size(34, 48)
+			);
 
-		var foodMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/images/map-food-pin.png',
-			new google.maps.Size(33, 47)
-		);
+			var foodMarkerIcon = new google.maps.MarkerImage(
+				templatedir + '/images/map-food-pin.png',
+				new google.maps.Size(33, 47)
+			);
 
-		var storeMarkerIcon = new google.maps.MarkerImage(
-			templatedir + '/images/map-store-pin.png',
-			new google.maps.Size(34, 48)
-		);
+			var storeMarkerIcon = new google.maps.MarkerImage(
+				templatedir + '/images/map-store-pin.png',
+				new google.maps.Size(34, 48)
+			);
 
-		//Info Boxes JSON
-		var IB_defaults = {
-			map: map,
-			shadowstyle: 0,
-			padding: 0,
-			backgroundColor: 'rgb(255,255,255)',
-			borderRadius: 0,
-			maxWidth: 224,
-			borderWidth: 0,
-			hideCloseButton: true,
-			animation: null,
-			disableAutoPan: true,
-			pixelOffset: new google.maps.Size(-350, 0),
-		};
+			//Info Boxes JSON
+			var IB_defaults = {
+				map: map,
+				shadowstyle: 0,
+				padding: 0,
+				backgroundColor: 'rgb(255,255,255)',
+				borderRadius: 0,
+				maxWidth: 224,
+				borderWidth: 0,
+				hideCloseButton: true,
+				animation: null,
+				disableAutoPan: true,
+				pixelOffset: new google.maps.Size(-350, 0),
+			};
 
-		var global_markers_array = [];
-		var markers_array = [];
+			var global_markers_array = [];
+			var markers_array = [];
 
-		var toggleVisibility = function(show, markers) {
+			var toggleVisibility = function(show, markers) {
 
-			for (var i = 0, length = markers.length; i < length; i++) {
-				markers[i].setVisible(show);
+				for (var i = 0, length = markers.length; i < length; i++) {
+					markers[i].setVisible(show);
+				}
+
 			}
 
-		}
+			// google.maps.event.addListener( map, 'zoom_changed', function() {
+			// 	jQuery('#alt-map').addClass( 'lock-zoom' );
+			//    } );
 
-		// google.maps.event.addListener( map, 'zoom_changed', function() {
-		// 	jQuery('#alt-map').addClass( 'lock-zoom' );
-		//    } );
+			<?php
 
-		<?php
+			$map_categories = get_field( 'map_categories' );
+			$location_counter = 1;
+			$category_counter = 1;
 
-		$map_categories = get_field( 'map_categories' );
-		$location_counter = 1;
-		$category_counter = 1;
+			foreach ( $map_categories as $map_category ) {
+			$map_locations = $map_category['locations'];
+			aasort( $map_locations, 'name' );
+			?>
 
-		foreach ( $map_categories as $map_category ) {
-		$map_locations = $map_category['locations'];
-		aasort( $map_locations, 'name' );
-		?>
+			var markers_array_<?php echo $category_counter; ?> = [];
 
-		var markers_array_<?php echo $category_counter; ?> = [];
+			<?php if ( $map_locations ) {
+			foreach ( $map_locations as $location ) {
 
-		<?php if ( $map_locations ) {
-		foreach ( $map_locations as $location ) {
+			if ( $location['latitude'] && $location['longitude'] ) { ?>
 
-		if ( $location['latitude'] && $location['longitude'] ) { ?>
+			var ll_<?php echo $location_counter; ?> = new google.maps.LatLng(<?php echo $location['latitude']; ?>, <?php echo $location['longitude']; ?>);
 
-		var ll_<?php echo $location_counter; ?> = new google.maps.LatLng(<?php echo $location['latitude']; ?>, <?php echo $location['longitude']; ?>);
+			<?php
 
-		<?php
+			/* Determine Map Icon */
+			switch ( $map_category['icon'] ) {
 
-		/* Determine Map Icon */
-		switch ( $map_category['icon'] ) {
+			case 'store': ?>
+			var usedIcon = storeMarkerIcon;
+			<?php break;
 
-		case 'store': ?>
-		var usedIcon = storeMarkerIcon;
-		<?php break;
+			case 'food': ?>
+			var usedIcon = foodMarkerIcon;
+			<?php break;
 
-		case 'food': ?>
-		var usedIcon = foodMarkerIcon;
-		<?php break;
-
-		case 'cash': ?>
-		var usedIcon = cashMarkerIcon;
-		<?php break;
-		}
-
-		?>
-
-		<?php if ( $category_counter == 1 ) { ?>
-
-		var markerOBJ = {
-			position: ll_<?php echo $location_counter; ?>,
-			map: map,
-			title: "<?php echo $location['name']; ?>",
-			icon: usedIcon,
-			visible: true
-		}
-
-		<?php } else { ?>
-
-		var markerOBJ = {
-			position: ll_<?php echo $location_counter; ?>,
-			map: map,
-			title: "<?php echo $location['name']; ?>",
-			icon: usedIcon,
-			visible: false
-		}
-
-		<?php } ?>
-
-		//Map Marker
-		var marker_<?php echo $location_counter; ?>  = new google.maps.Marker( markerOBJ );
-
-		/* Establish Info Bubble Object */
-		var InfoWindow_<?php echo $location_counter; ?> = new InfoBubble( IB_defaults );
-
-		/* Push InfoWindow To Global Markers Array */
-		global_markers_array.push( InfoWindow_<?php echo $location_counter; ?> );
-
-		/* Push InfoWindow To Current Category Markers Array */
-		markers_array.push( marker_<?php echo $location_counter; ?> );
-		markers_array_<?php echo $category_counter; ?>.push( marker_<?php echo $location_counter; ?> );
-
-		var the_html = '<div class="info-box-wrapper" style="padding: 20px;">';
-		the_html += '<div class="home-pin">';
-		the_html += '<div class="inner">';
-		the_html += '<div class="body" style="padding: 0;">';
-		the_html += "<div class='location-name'><?php echo $location['name']; ?></div>";
-		the_html += "<div class='location-category'><?php echo $map_category['name']; ?></div>";
-		the_html += '</div>';
-		the_html += '</div>';
-		the_html += '</div>';
-		the_html += '</div>';
-
-
-		/* Create Info Bubble */
-		InfoWindow_<?php echo $location_counter; ?>.setContent( the_html );
-
-		InfoWindow_<?php echo $location_counter; ?>.setMinHeight( 100 );
-
-		/* Add Map Marker Event Listener */
-		google.maps.event.addListener(marker_<?php echo $location_counter; ?>, 'click', function() {
-			for (i = 0; i < global_markers_array.length; i++) {
-				global_markers_array[i].close();
+			case 'cash': ?>
+			var usedIcon = cashMarkerIcon;
+			<?php break;
 			}
-			map.panTo(ll_<?php echo $location_counter; ?>);
-			if ( map.getZoom() < 17 ) {
-				map.setZoom( 17 );
-			}
-			InfoWindow_<?php echo $location_counter; ?>.open( map, marker_<?php echo $location_counter; ?> );
-		});
 
-		/* Category Click */
-		jQuery('.location-link[data-location-num="<?php echo $location_counter; ?>"]').on( 'click', function(evt) {
+			?>
+
+			<?php if ( $category_counter == 1 ) { ?>
+
+			var markerOBJ = {
+				position: ll_<?php echo $location_counter; ?>,
+				map: map,
+				title: "<?php echo $location['name']; ?>",
+				icon: usedIcon,
+				visible: true
+			}
+
+			<?php } else { ?>
+
+			var markerOBJ = {
+				position: ll_<?php echo $location_counter; ?>,
+				map: map,
+				title: "<?php echo $location['name']; ?>",
+				icon: usedIcon,
+				visible: false
+			}
+
+			<?php } ?>
+
+			//Map Marker
+			var marker_<?php echo $location_counter; ?>  = new google.maps.Marker( markerOBJ );
+
+			/* Establish Info Bubble Object */
+			var InfoWindow_<?php echo $location_counter; ?> = new InfoBubble( IB_defaults );
+
+			/* Push InfoWindow To Global Markers Array */
+			global_markers_array.push( InfoWindow_<?php echo $location_counter; ?> );
+
+			/* Push InfoWindow To Current Category Markers Array */
+			markers_array.push( marker_<?php echo $location_counter; ?> );
+			markers_array_<?php echo $category_counter; ?>.push( marker_<?php echo $location_counter; ?> );
+
+			var the_html = '<div class="info-box-wrapper" style="padding: 20px;">';
+			the_html += '<div class="home-pin">';
+			the_html += '<div class="inner">';
+			the_html += '<div class="body" style="padding: 0;">';
+			the_html += "<div class='location-name'><?php echo $location['name']; ?></div>";
+			the_html += "<div class='location-category'><?php echo $map_category['name']; ?></div>";
+			the_html += '</div>';
+			the_html += '</div>';
+			the_html += '</div>';
+			the_html += '</div>';
+
+
+			/* Create Info Bubble */
+			InfoWindow_<?php echo $location_counter; ?>.setContent( the_html );
+
+			InfoWindow_<?php echo $location_counter; ?>.setMinHeight( 100 );
+
+			/* Add Map Marker Event Listener */
+			google.maps.event.addListener(marker_<?php echo $location_counter; ?>, 'click', function() {
+				for (i = 0; i < global_markers_array.length; i++) {
+					global_markers_array[i].close();
+				}
+				map.panTo(ll_<?php echo $location_counter; ?>);
+				if ( map.getZoom() < 17 ) {
+					map.setZoom( 17 );
+				}
+				InfoWindow_<?php echo $location_counter; ?>.open( map, marker_<?php echo $location_counter; ?> );
+			});
+
+			/* Category Click */
+			jQuery('.location-link[data-location-num="<?php echo $location_counter; ?>"]').on( 'click', function(evt) {
 			evt.preventDefault();
 			for (i = 0; i < global_markers_array.length; i++) {
 				global_markers_array[i].close();
@@ -458,9 +457,10 @@ $google_maps_api_key = get_field('google_maps_api_key');
 
 	}
 
-	//Initialize Google Map
-	google.maps.event.addDomListener(window, 'load', initializeGoogleMap);
+		//Initialize Google Map
+		google.maps.event.addDomListener(window, 'load', initializeGoogleMap);
 
 </script>
+
 
 <?php get_footer(); ?>

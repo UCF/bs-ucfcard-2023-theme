@@ -255,7 +255,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 				style: google.maps.ZoomControlStyle.LARGE,
 				position: google.maps.ControlPosition.LEFT_CENTER,
 			},
-			
+
 		};
 
 			//Activate Map

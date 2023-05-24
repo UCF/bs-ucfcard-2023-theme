@@ -93,7 +93,7 @@ $google_maps_api_key = get_field('google_maps_api_key');
 									<div style="position: absolute; opacity: 0; left: -5000px">
 										<img src="<?php echo $map_category['background_image']; ?>" />
 									</div>
-									<a href="#" data-category-bg="<?php echo $map_category['background_image']; ?>" data-category-num="<?php echo $cat_counter; ?>" data-category="<?php echo str_replace( '--', '-', str_replace( '&', '', str_replace( ' ', '-', strtolower( $map_category['name'] ) ) ) ); ?>" class="cta-btn yellow"><?php echo $map_category['name']; ?></a>
+									<a href="#" data-category-bg="<?php echo $map_category['background_image']; ?>" data-category-num="<?php echo $cat_counter; ?>" data-category="<?php echo str_replace( '--', '-', str_replace( '&', '', str_replace( ' ', '-', strtolower( $map_category['name'] ) ) ) ); ?>" class="cbtn btn-primary btn-sm"><?php echo $map_category['name']; ?></a>
 									<?php $cat_counter++; /* Increase Category Counter */ }
 								?>
 							</div>

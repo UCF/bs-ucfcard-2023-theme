@@ -17,20 +17,20 @@
 	$badge_content = get_field('badge_content');
 	?>
 
-	<div class="container">
-		<div class="row">
+	<div class="container py-5">
+		<div class="row justify-content-center">
 			<?php if( $staff_image ): ?>
-				<div class="mb-4 col-md-6 col-lg-4" id="staffToggle">
+				<div class="mb-4 col-md-6 col-lg-4">
 
-					<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-inverse text-decoration-none" href="#staffForm" data-toggle="collapse" aria-expanded="false" aria-controls="#staffForm, #badgeForm">
+					<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-inverse hover-text-primary  text-decoration-none" id="staffToggle" href="#staffForm" data-toggle="collapse" aria-expanded="false" aria-controls="#staffForm, #badgeForm">
 
-						<img src="<?php echo esc_url( $staff_image['url'] ); ?>" alt="<?php echo esc_attr( $staff_image['alt'] ); ?>" class=" media-background object-fit-cover hover-child hover-child-scale-up" data-object-fit="cover">
+						<img src="<?php echo esc_url( $staff_image['url'] ); ?>" alt="<?php echo esc_attr( $staff_image['alt'] ); ?>" class=" media-background object-fit-contain hover-child" data-object-fit="contain">
 
 						<div class="media-background object-fit-cover bg-inverse-t-3 hover-child hover-child-hide fade" data-object-fit="cover"></div>
 
-						<h3 class="h5 text-uppercase mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
+						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 py-2 mt-5 mb-3"><?php echo $staff_overlay; ?></h3>
 
-						<span class="fa fa-2x fa-chevron-down hover-child hover-child-show fade mt-5 mb-3" aria-hidden="true"></span>
+						<span class="fa fa-2x fa-chevron-down hover-child mt-5 mb-3" aria-hidden="true"></span>
 
 					</a>
 
@@ -38,24 +38,24 @@
 			<?php endif; ?>
 
 			<?php if( $badge_image ): ?>
-				<div class="mb-4 col-md-6 col-lg-4" id="badgeToggle">
+				<div class="mb-4 col-md-6 col-lg-4">
 
-					<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-inverse text-decoration-none" href="#badgeForm" data-toggle="collapse" aria-expanded="false" aria-controls="#staffForm, #badgeForm">
+					<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-inverse hover-text-primary text-decoration-none" id="badgeToggle" href="#badgeForm" data-toggle="collapse" aria-expanded="false" aria-controls="#staffForm, #badgeForm">
 
-						<img src="<?php echo esc_url( $badge_image['url'] ); ?>" alt="<?php echo esc_attr( $badge_image['alt'] ); ?>" class=" media-background object-fit-cover hover-child hover-child-scale-up" data-object-fit="cover">
+						<img src="<?php echo esc_url( $badge_image['url'] ); ?>" alt="<?php echo esc_attr( $badge_image['alt'] ); ?>" class=" media-background object-fit-contain hover-child" data-object-fit="contain">
 
 						<div class="media-background object-fit-cover bg-inverse-t-3 hover-child hover-child-hide fade" data-object-fit="cover"></div>
 
-						<h3 class="h5 text-uppercase mt-5 mb-3"><?php echo $badge_overlay; ?></h3>
+						<h3 class="h5 text-uppercase text-center hover-child text-inverse bg-inverse-t-3 py-2 mt-5 mb-3"><?php echo $badge_overlay; ?></h3>
 
-						<span class="fa fa-2x fa-chevron-down hover-child hover-child-hide fade mt-5 mb-3" aria-hidden="true"></span>
+						<span class="fa fa-2x fa-chevron-down hover-child mt-5 mb-3" aria-hidden="true"></span>
 
 					</a>
 
 				</div>
 			<?php endif; ?>
 		</div>
-		<div class="row mt-4">
+		<div class="row mt-4" id="formContainer">
 			<div class="col-md-12">
 				<div class="collapse" id="staffForm">
 					<form>

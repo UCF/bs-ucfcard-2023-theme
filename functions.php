@@ -22,7 +22,7 @@ function my_custom_menu_item_classes($classes, $item, $args, $depth) {
 
 	//Add custom class to pecial nav items
 	if ('header-menu' === $args->theme_location && in_array($item->title, $special_items)) {
-		$classes[] = ' knight-cash-menu-button bg-primary'; // Add custom class
+		$classes[] = ' knight-cash-menu-button bg-primary-t-2'; // Add custom class
 	}
 
 	return $classes;
@@ -45,9 +45,33 @@ function my_custom_menu_link_attributes($atts, $item, $args, $depth) {
 
 	if ('header-menu' === $args->theme_location && in_array($item->title, $special_items)) {
 		$existing_classes = isset($atts['class']) ? $atts['class'] : '';
-		$atts['class'] = $existing_classes . ' text-primary'; // Add 'text-inverse' class
+		$atts['class'] = $existing_classes . ' text-inverse'; // Add 'text-inverse' class
 	}
 
 	return $atts;
 }
 add_filter('nav_menu_link_attributes', 'my_custom_menu_link_attributes', 10, 4);
+
+/**
+ * Add sorting for Knightcash map locations
+ *
+ * @since 0.1.3
+ * @author Mike Setzer
+ **/
+function aasort ( &$array, $key ) {
+	$sorter = array();
+	$ret = array();
+	reset( $array );
+
+	foreach ( $array as $ii => $va ) {
+		$sorter[$ii] = $va[$key];
+	}
+
+	asort( $sorter );
+
+	foreach ( $sorter as $ii => $va ) {
+		$ret[$ii] = $array[$ii];
+	}
+
+	$array = $ret;
+}

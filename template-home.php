@@ -1,3 +1,11 @@
+<?php
+/**
+ * Template Name: Home
+ * Template Post Type: page, post
+ */
+?>
+<?php get_header(); the_post(); ?>
+
 <div class="jumbotron jumbotron-fluid py-5 bg-inverse-t-2 mb-0">
 	<div class="container text-center py-lg-4 px-lg-5">
 		<h2 class="display-4 font-condensed mb-5">Welcome to Card Services</h2>
@@ -56,3 +64,5 @@
 		</div>
 	</div>
 </div>
+
+<?php get_footer(); ?>

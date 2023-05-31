@@ -58,14 +58,10 @@
 		<div class="row mt-4" id="formContainer">
 			<div class="col-md-12">
 				<div class="collapse" id="staffForm">
-					<form>
-						<?php echo $staff_content; ?>
-					</form>
+					<?php echo $staff_content; ?>
 				</div>
 				<div class="collapse" id="badgeForm">
-					<form>
-						<?php echo $badge_content; ?>
-					</form>
+					<?php echo $badge_content; ?>
 				</div>
 			</div>
 		</div>

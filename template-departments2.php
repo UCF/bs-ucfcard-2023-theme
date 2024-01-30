@@ -9,7 +9,6 @@ the_post();
 
 	<article class="<?php echo esc_attr( $post->post_status ); ?> post-list-item">
 		<div class="container mt-4 mt-sm-5 mb-5 pb-sm-4">
-			<?php theme_breadcrumbs(); ?>
 
 			<?php if (!empty(get_the_content())) : ?>
 				<!-- Main Content Area -->

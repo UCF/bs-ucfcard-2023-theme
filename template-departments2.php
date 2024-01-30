@@ -24,16 +24,17 @@ the_post();
 				<div class="row">
 					<?php while( have_rows('form_items') ): the_row();
 						$text = get_sub_field('text');
+						$text_color = get_sub_field('text_color');
 						$link = get_sub_field('link');
 						$image = get_sub_field('image');
 						$overlay_color = get_sub_field('overlay_color');
 						?>
 
 						<div class="mb-4 col-md-6 col-lg-4">
-							<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent text-secondary hover-text-inverse text-decoration-none" href="<?php echo esc_url($link); ?>">
+							<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent hover-text-inverse text-decoration-none" href="<?php echo esc_url($link); ?>"  style="background-color:<?php echo esc_attr($overlay_color); ?>;">
 								<img decoding="async" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="media-background object-fit-contain hover-child hover-child-scale-up" data-object-fit="cover">
 
-								<div class="media-background object-fit-contain bg-primary-t-1 hover-child hover-child-hide fade" style="background-color:<?php echo esc_attr($overlay_color); ?>;"></div>
+								<div class="media-background object-fit-contain hover-child hover-child-hide fade" style="background-color:<?php echo esc_attr($overlay_color); ?>;"></div>
 								<div class="media-background object-fit-contain bg-inverse-t-3 hover-child hover-child-show fade" data-object-fit="cover"></div>
 
 								<h3 class="h4 text-uppercase mt-5 mb-3"><?php echo esc_html($text); ?></h3>

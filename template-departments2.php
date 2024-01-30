@@ -31,7 +31,7 @@ the_post();
 						?>
 
 						<div class="mb-4 col-md-6 col-lg-4">
-							<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent hover-text-inverse text-decoration-none" href="<?php echo esc_url($link); ?>"  style="background-color:<?php echo esc_attr($overlay_color); ?>;">
+							<a class="media-background-container gtm-section-links-cards d-block w-100 h-100 px-4 pt-5 pb-4 hover-parent hover-text-inverse text-decoration-none" href="<?php echo esc_url($link); ?>"  style="color:<?php echo esc_attr($text_color); ?>;">
 								<img decoding="async" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="media-background object-fit-contain hover-child hover-child-scale-up" data-object-fit="cover">
 
 								<div class="media-background object-fit-contain hover-child hover-child-hide fade" style="background-color:<?php echo esc_attr($overlay_color); ?>;"></div>
